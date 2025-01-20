@@ -1,0 +1,37 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
+
+      - name: Install Mojo (Placeholder)
+        run: |
+          echo "Installing Mojo..."
+          # Add Mojo installation command here when ready
+          # Example: curl -L <mojo-download-url> | bash
+
+      - name: Build API Worker
+        run: |
+          cd api_worker
+          go build -o api_worker
+
+      - name: Build AI Worker (Placeholder)
+        run: |
+          echo "Building AI worker with Mojo..."
+          # Add Mojo build commands here
