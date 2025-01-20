@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  setup-environment:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,16 +22,34 @@ jobs:
 
       - name: Install Mojo (Placeholder)
         run: |
-          echo "Installing Mojo..."
-          # Add Mojo installation command here when ready
-          # Example: curl -L <mojo-download-url> | bash
+          echo "Installing Mojo (placeholder)..."
+          # Add Mojo installation steps here when development starts
+          echo "Skipping actual installation for now."
 
-      - name: Build API Worker
+      - name: Verify Setup
         run: |
-          cd api_worker
-          go build -o api_worker
+          echo "Environment is ready. Waiting for actual project files."
 
-      - name: Build AI Worker (Placeholder)
+  placeholder-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Placeholder for API Worker Build
         run: |
-          echo "Building AI worker with Mojo..."
-          # Add Mojo build commands here
+          echo "No API worker code available yet. Skipping build."
+
+      - name: Placeholder for AI Worker Build
+        run: |
+          echo "No AI worker code available yet. Skipping build."
+
+  placeholder-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Placeholder for Tests
+        run: |
+          echo "No test cases available yet. Skipping tests."
